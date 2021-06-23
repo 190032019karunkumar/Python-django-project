@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Winners Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+nav {
+    flex: 1;
+    text-align: right;
+    font-size: 20px;
+}
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+p {
+    color: #555;
+}
+.container {
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.col-2 {
+    flex-basis: 50%;
+    min-width: 300px;
+}
+.col-2 img {
+    max-width: 100%;
+    padding: 50px 0;
+}
+.col-2 h1 {
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+
+.header {
+    background: linear-gradient(to right, #108dc7, #ef8e38);
+}
+.header .row {
+    margin-top: 30px;
+}
+.categories {
+    margin: 70px 0;
+}
+.col-3 {
+    flex-basis: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+.col-3 img {
+    width: 100%;
+}
+
+
+.small-container {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding: 5px;
+}
+.col-4 {
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 320px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+.col-4 img {
+    width: 280px;
+    height: 280px;
+    padding: 15px;
+}
+
+button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px 110px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px; 
+}
+.title {
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+}
+.title::after {
+    content: '';
+    background: #ff523b;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left:50%;
+    transform: translateX(-50%);
+}
+h4 {
+    color: #555;
+    font-weight: normal;
+    font-size: 20px;
+    font-weight: 800;
+}
+.col-4 p {
+    font-size: 20px;
+    text-align: left;
+    padding:10px;
+    font-weight: 800;
+}
+.rating .fa {
+    color: #ff523b;
+}
+.col-4:hover {
+    transform: translateY(-7px);
+}
+
+
+/*    offer   */
+.offer {
+    background: linear-gradient(#fff,#ffd6d6);
+    margin-top: 80px;
+    padding: 30px 0;
+}
+.col-2 .offer-img{
+    padding: 50px;
+}
+small {
+    color: #555;
+}
+
+
+.footer {
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+.footer p {
+    color: #8a8a8a;
+}
+.footer h3 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4 {
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+.footer-col-1 {
+    flex-basis: 30%;
+}
+.footer-col-2 {
+    flex: 1;
+    text-align: center;
+}
+.footer-col-2 img {
+    width: 140px;
+    height:80px;
+    margin-bottom: 20px;
+}
+.footer-col-3, .footer-col-4 {
+    flex-basis: 12%;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+}
+.app-logo {
+    margin-top: 20px;
+}
+.app-logo img {
+    width: 140px;
+}
+.footer hr {
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0;
+}
+.copy-right {
+    text-align: center;
+}
+
+.menu-icon {
+    width: 28px;
+    margin-left: 20px;
+    display: none;
+}
+
+
+/*-------------------------------Products Page----------------------------------------*/
+
+.row-2 {
+    justify-content: space-between;
+    margin: 100px auto 50px;
+}
+select {
+    border: 1px solid #ff523b;
+    padding: 5px;
+}
+select:focus {
+    outline: none;
+}
+.page-btn {
+    margin: 0 auto 80px;
+}
+.page-btn span {
+    display: inline-block;
+    border: 1px solid #ff523b;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.page-btn span:hover {
+    background: #ff523b;
+    color: #fff;
+}
+/*-------------------------------Products Page----------------------------------------*/
+
+
+
+
+
+@media only screen and (max-width:800px) {
+    nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #333;
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    nav ul li a {
+        color: #fff;
+    }
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .row {
+        text-align: center;
+    }
+    .col-2, .col-3, .col-4 {
+        flex-basis: 100%;
+    }
+    .single-product .row {
+        text-align: left;
+    }
+    .single-product .col-2 {
+        padding: 20px 0;
+    }
+    .single-product h1 {
+        font-size: 26px;
+        line-height: 22px;
+    }
+    .cart-info p {
+        display: none;
+    }
+}
+
+.mySlides {
+    display:none;
+   }
+
+  * {
+  box-sizing: border-box;
+}
+
+
+
+.testimonial {
+    width:350px;
+    display:inline-block;
+    margin: 0 20px;
+    transition: .5s;
+    
+}
+.testimonial:hover{
+    transform: translateY(-20px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+}
+.testimonial .card {
+    position:relative;
+    overflow:hidden;
+    width:350px;
+    height: 450px;
+    margin:0 auto;
+    background:#2c2c2c;
+    padding:20px;
+    box-sizing:border-box;
+    text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,.5);
+}
+.testimonial .card .layer {
+    z-index:1;
+    position:absolute;
+    top: 0;
+    left: 99.5%;
+    height:100%;
+    width:100%;
+    background:linear-gradient(to bottom right , #08686c, #59ed75);
+    transition:0.5s;
+}
+.testimonial .card:hover  .layer{
+    left: 0;
+}
+.testimonial .card .content {
+    z-index:2; 
+    position:relative;
+}
+.testimonial .card .content p {
+    font-size:14px;
+    line-height:24px;
+    color:#fff;
+}
+.testimonial .card .content .image {
+    width:100px;
+    height:100px;
+    margin:0 auto;
+    border-radius:50%;
+    overflow:hidden;
+    border: 3px solid white;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    transition: .5s;
+}
+.testimonial:hover .card .content .details h2{
+    color: white;
+}
+.testimonial .card .content .details h2 {
+    font-size:30px;
+    color:black;
+    transition:0.5s;
+}
+.testimonial .card .content .details h2 span {
+    font-size:25px;
+    color:#173ad0;
+    transition:0.5s;
+}
+.testimonial .card:hover .content .details h2 span {
+    color:white;
+    position:relative;
+}
+
+
+</style>
+<body>
+    <div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="./"><img src="{% static 'images/logo2.jpg' %}" height="50px"width="50px"></a>
+             </div>
+             <div style="font-size: 25px;padding: 0px 10px;">Auction House</div>
+            <nav>
+                <ul id="menuitems">
+                    <li><a href="/start">Home</a></li>
+                    <li><a href="/auc">Auctions</a></li>
+                    <li><a href="/daily">Daily Auctions</a></li>
+                    <li><a href="/win">Winners</a></li>
+                    <li><a href="/test">Testimonials</a></li>
+                    <li><a href="/off">Offers</a></li>
+                    <li><a href="/pro/{{ user.id}}/{{ user.username }}">Profile</a></li>
+                    <li><a href="/reg">Login</a></li>
+                </ul>
+            </nav>
+            <img src="{% static 'images/menu.png' %}" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+</div>
+
+<!--------------------------featured products----------------------------------->
+<div class="small-container">
+    <div class="row row-2">
+        <h2>All Winners</h2>
+        <select>
+            <option>Default  Sorting</option>
+            <option>Sort by off</option>
+            <option>Sort by code</option>
+            <option>Sort by Expire</option>
+        </select>
+    </div>
+
+    <div class="testimonial">
+        <div class="card">
+          <div class="layer"></div>
+          <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam iusto ea tenetur quas facere minima obcaecati mollitia sed ipsum quod, eius repellat nihil quos. Saepe ipsa veritatis magni voluptates voluptatum.</p>
+            <div class="image">
+              <img  width="100px" src="2.jpg" alt="">
+            </div>
+            <div class="details">
+              <h2> Someone famous <br> <span>Frontend developer</span></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="page-btn">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>&#8594;</span>
+    </div>
+</div>
+
+<!--------------------------featured products----------------------------------->
+
+<!----------------------------footer----------------------------------->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download our app</h3>
+                <p>Download app for andriod and ios mobiles phones.</p>
+                <div class="app-logo">
+                    <img src="{% static 'images/play-store.png' %}">
+                    <img src="{% static 'images/app-store.png' %}">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="{% static 'images/logo5.jpg' %}">
+                <p>Download app for andriod and ios mobiles phones.</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>join affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow us</h3>
+                <ul>
+                    <li>Facebbok</li>
+                    <li>Instagram</li>
+                    <li>Twitter</li>
+                    <li>youtube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copy-right">Copy Right</p>
+    </div>
+</div>
+
+<!----------------------------footer----------------------------------->
+
+<script>
+    var menuitems = document.getElementById("menuitems");
+    menuitems.style.maxHeight ="0px";
+    function menutoggle() {
+        if(menuitems.style.maxHeight == "0px") {
+            menuitems.style.maxHeight = "200px"
+        }
+        else {
+            menuitems.style.maxHeight = "0px"
+        }
+    }
+</script>
+
+</body>
+</html>
